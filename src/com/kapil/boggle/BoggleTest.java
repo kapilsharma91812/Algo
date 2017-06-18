@@ -1,4 +1,4 @@
-package com.kapil.Boggle;
+package com.kapil.boggle;
 
 /**
  * Created by kapilsharma on 17/06/17.

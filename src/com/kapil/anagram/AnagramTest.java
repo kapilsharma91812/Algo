@@ -1,4 +1,4 @@
-package com.kapil.Anagram;
+package com.kapil.anagram;
 
 import java.util.*;
 

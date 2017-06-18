@@ -1,4 +1,4 @@
-package com.kapil.Anagram;
+package com.kapil.anagram;
 
 /**
  * Created by kapilsharma on 17/06/17.
