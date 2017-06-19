@@ -30,7 +30,7 @@ public abstract class Linklist {
         }
     }
 
-    public void print(Node list ) {
+    public void print(Node list) {
         while (null != list) {
             System.out.print(list.data + ", ");
             list = list.next;
