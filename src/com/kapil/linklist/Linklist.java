@@ -14,6 +14,11 @@ public abstract class Linklist {
         this.head = head;
     }
 
+    public void initDefault() {
+        int data[] = {1, 2, 3, 4, 5, 6, 7};
+        init(data);
+    }
+
     public void init(int data[]) {
         Node list = null;
         for (int i = 0; i < data.length; i++) {
@@ -95,6 +100,107 @@ public abstract class Linklist {
         } else {
             return list; //empty or null head
         }
+    }
+
+    public static Node findKthNode(Node head, int k) {
+        int counter = 0;
+        Node start = head;
+        while (head != null && counter != k) {
+            head = head.next;
+            counter++;
+        }
+        if (counter != k) {
+            return null;
+        }
+
+        while (head != null) {
+            head = head.next;
+            start = start.next;
+        }
+        return start;
+    }
+
+    public static void removeLoop(Node loopPoint, Node head) {
+        Node list = head;
+        Node loopNode;
+
+        while (true) {
+            /* Now start a pointer from loop_node and check if it ever
+             reaches loopNode */
+            loopNode = loopPoint;
+            while (loopNode.next != loopPoint && loopNode.next != list) {
+                loopNode = loopNode.next;
+            }
+
+            /* If loopNode reahced list then there is a loop. So break the
+             loop */
+            if (loopNode.next == list) {
+                break;
+            }
+
+            /* If loopNode did't reach ptr1 then try the next node after list */
+            list = list.next;
+        }
+
+        loopNode.next = null;
+    }
+
+
+    public static Node getLoopNode(Node head) {
+        Node slowPointer = head;
+        Node fastPointer = head;
+
+        while (slowPointer != null && fastPointer != null && fastPointer.next != null) {
+            slowPointer = slowPointer.next;
+            fastPointer = fastPointer.next.next;
+
+            if (slowPointer == fastPointer) {
+                return fastPointer;
+            }
+        }
+
+        return null;
+    }
+
+    public static Node replaceNGetHead(Node head, int data1, int data2) {
+        Node newHead = head;
+        Node currentX = head;
+        Node prevX = null ;
+        Node currentY = head;
+        Node prevY = null;
+
+        while (currentX != null && currentX.data != data1) {
+            prevX = currentX;
+            currentX = currentX.next;
+        }
+
+        while (currentY != null && currentY.data != data2) {
+            prevY = currentY;
+            currentY = currentY.next;
+        }
+
+        if (currentX == null || currentY == null) {
+            return newHead;
+        }
+
+        if (prevX != null) {
+            prevX.next = currentY;
+        } else {
+            newHead = currentY;
+        }
+
+
+        if (prevY != null) {
+            prevY.next = currentX;
+        } else {
+            newHead = currentX;
+        }
+
+        Node temp = currentX.next;
+        currentX.next = currentY.next;
+        currentY.next = temp;
+        return newHead;
+
     }
 
 }
