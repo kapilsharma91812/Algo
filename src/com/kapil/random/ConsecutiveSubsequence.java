@@ -1,10 +1,9 @@
-package com.kapil.array;
+package com.kapil.random;
 
 /**
  * Created by kapilsharma on 21/06/17.
  */
 // Java program to find longest consecutive subsequence
-import java.io.*;
 import java.util.*;
 
 public class ConsecutiveSubsequence
