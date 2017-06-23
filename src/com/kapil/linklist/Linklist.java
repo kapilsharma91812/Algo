@@ -35,7 +35,25 @@ public abstract class Linklist {
         }
     }
 
-    public void print(Node list) {
+    public Node initNGetHead(int data[]) {
+        Node list = null;
+        Node newHead = null;
+        for (int i = 0; i < data.length; i++) {
+            Node node = new Node();
+            if (newHead == null) {
+                newHead = node;
+                list = node;
+            } else {
+                list.next = node;
+                list = list.next;
+            }
+            node.data = data[i];
+            node.next = null;
+        }
+        return newHead;
+    }
+
+    public static void print(Node list) {
         while (null != list) {
             System.out.print(list.data + ", ");
             list = list.next;
@@ -200,6 +218,25 @@ public abstract class Linklist {
         currentX.next = currentY.next;
         currentY.next = temp;
         return newHead;
+
+    }
+
+    public static Node delete(Node head, int data) {
+        Node pre = null;
+        Node current = head;
+        while (current != null) {
+            if (current.data == data) {
+                break;
+            }
+            pre = current;
+            current = current.next;
+        }
+        if (pre != null && current != null) {
+            pre.next = current.next;
+        } else if (current != null) {
+            return current.next;
+        }
+        return head;
 
     }
 
