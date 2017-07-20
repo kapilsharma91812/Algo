@@ -1,4 +1,4 @@
-package com.kapil.backtracking.kruskal;
+package com.kapil.greedy.graph.kruskal;
 
 /**
  * Created by kapilsharma on 20/07/17.
