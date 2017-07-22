@@ -5,12 +5,12 @@ import java.util.Arrays;
 /**
  * Created by kapilsharma on 20/07/17.
  */
-public class Graph {
+public class MST {
     int vertexCount;
     int edgesCount;
     Edge edges[];
 
-    public Graph(int vertexCount, int edgesCount) {
+    public MST(int vertexCount, int edgesCount) {
         this.vertexCount = vertexCount;
         this.edgesCount = edgesCount;
         edges = new Edge[edgesCount];
@@ -20,35 +20,35 @@ public class Graph {
     }
 
     public static void main(String[] args) {
-        int V = 4;  // Number of vertices in graph
-        int E = 5;  // Number of edgess in graph
-        Graph graph = new Graph(V, E);
+        int V = 4;  // Number of vertices in mst
+        int E = 5;  // Number of edgess in mst
+        MST mst = new MST(V, E);
 
         // add edges 0-1
-        graph.edges[0].src = 0;
-        graph.edges[0].dest = 1;
-        graph.edges[0].weight = 10;
+        mst.edges[0].src = 0;
+        mst.edges[0].dest = 1;
+        mst.edges[0].weight = 10;
 
         // add edges 0-2
-        graph.edges[1].src = 0;
-        graph.edges[1].dest = 2;
-        graph.edges[1].weight = 6;
+        mst.edges[1].src = 0;
+        mst.edges[1].dest = 2;
+        mst.edges[1].weight = 6;
 
         // add edges 0-3
-        graph.edges[2].src = 0;
-        graph.edges[2].dest = 3;
-        graph.edges[2].weight = 5;
+        mst.edges[2].src = 0;
+        mst.edges[2].dest = 3;
+        mst.edges[2].weight = 5;
 
         // add edges 1-3
-        graph.edges[3].src = 1;
-        graph.edges[3].dest = 3;
-        graph.edges[3].weight = 15;
+        mst.edges[3].src = 1;
+        mst.edges[3].dest = 3;
+        mst.edges[3].weight = 15;
 
         // add edges 2-3
-        graph.edges[4].src = 2;
-        graph.edges[4].dest = 3;
-        graph.edges[4].weight = 4;
-        Edge[] result = graph.kruskalMST();
+        mst.edges[4].src = 2;
+        mst.edges[4].dest = 3;
+        mst.edges[4].weight = 4;
+        Edge[] result = mst.kruskalMST();
         printMST(result);
     }
 
