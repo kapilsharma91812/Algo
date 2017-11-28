@@ -25,7 +25,8 @@ public class MatrixMultiplication {
 
     public static void main(String args[]){
         MatrixMultiplication mmc = new MatrixMultiplication();
-        int arr[] = {4,2,3,5,3};
+        //int arr[] = {4,2,3,5,3};
+        int arr[] = {2,3,6,4,5};
         int cost = mmc.findCost(arr);
         System.out.print(cost);
     }
