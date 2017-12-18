@@ -1,9 +1,6 @@
 package com.kapil;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Created by kapilsharma on 23/06/17.
@@ -11,6 +8,9 @@ import java.util.Set;
 public class MapTest {
     public static void main(String[] args) {
         Map<String, Integer> mMap = new HashMap<>(5);
+        TreeSet<String> obj = new TreeSet<>();
+        String [] j = (String[]) obj.toArray();
+
         for(int i = 0; i < 10; i++) {
             mMap.put("kapil" + i , i);
         }
@@ -19,4 +19,5 @@ public class MapTest {
             System.out.println("key:" + key + " value:" + mMap.get(key));
         }
     }
+
 }
