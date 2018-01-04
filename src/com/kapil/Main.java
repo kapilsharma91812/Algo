@@ -1,20 +1,34 @@
 package com.kapil;
 
-public class Main {
+import java.util.Scanner;
+import java.util.Set;
+import java.util.TreeSet;
+import java.util.Vector;
 
+class Ma {
+    int i =4;
+    Ma() {
+i =2;
+    }
+    public  void  badMethod() {
+
+    }
+}
+public class Main  extends Ma{
     public static void main(String[] args) {
-        System.out.println(xyz());
-    }
 
-    private static int xyz() {
-        try{
-            int a = 5/1;
-            return 1;
-        } catch (Exception e) {
-            System.out.println(e);
-            return 2;
+        try {
+            //badMethod();
+            System.out.println("A");
+        }catch (Exception e) {
+            System.out.println("B");
         } finally {
-            return 3;
-        }
+            System.out.println("C");
     }
+        System.out.println("D");
+}
+public  int badMethod1() {
+    throw new RuntimeException();
+}
+
 }
